@@ -44,22 +44,22 @@ public class Main {
                 }
                 break;
             case 5:
-                calculator.findMaxAndMin(calculator.findArgX());
+                System.out.println(calculator.findMaxAndMin(calculator.findArgX()));
                 break;
             case 6:
-                calculator.findMaxAndMin(calculator.findArgY());
+                System.out.println(calculator.findMaxAndMin(calculator.findArgY()));
                 break;
             case 7:
-                calculator.findMaxMinWithIndex(calculator.findArgX());
+                System.out.println(calculator.findMaxMinWithIndex(calculator.findArgX()));
                 break;
             case 8:
-                calculator.findMaxMinWithIndex(calculator.findArgY());
+                System.out.println(calculator.findMaxMinWithIndex(calculator.findArgY()));
                 break;
             case 9:
-              calculator.findAverage(calculator.findArgY());
+                System.out.println(calculator.findAverage(calculator.findArgY()));
               break;
             case 10:
-                calculator.findAverage(calculator.findArgX());
+                System.out.println(calculator.findAverage(calculator.findArgX()));
                 break;
             case 11:
                 System.out.println("Enter index of element: ");

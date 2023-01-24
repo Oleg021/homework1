@@ -90,7 +90,7 @@ public class Calculator {
      * @param array array of double elements
      * @return
      */
-    public void findMaxAndMin(double[] array) {
+    public String findMaxAndMin(double[] array) {
         double min = array[0];
         double max = array[0];
         double[] result = new double[2];
@@ -104,7 +104,7 @@ public class Calculator {
                 result[1] = max;
             }
         }
-        System.out.println("Max = " + max + "\nMin = " + min);
+        return "Max = " + max + "\nMin = " + min;
     }
 
     /**
@@ -127,10 +127,9 @@ public class Calculator {
      *
      * @param array array of double elements
      */
-    public void findAverage(double[] array) {
+    public String findAverage(double[] array) {
         double average = findSum(array) / array.length;
-        System.out.println("Average = " + average
-                            + "\nSum = " + findSum(array));
+        return  "Average = " + average + "\nSum = " + findSum(array);
     }
 
     /**
@@ -139,7 +138,7 @@ public class Calculator {
      *
      * @param array array of double elements
      */
-    public void findMaxMinWithIndex(double[] array) {
+    public String findMaxMinWithIndex(double[] array) {
         double min = array[0];
         double max = array[0];
         int indexMax = 0;
@@ -156,8 +155,8 @@ public class Calculator {
 
         }
 
-        System.out.println("Max = " + max + " withIndex: " + indexMax + "\nMin = " + min +
-                " with index: " + indexMin);
+        return "Max = " + max + " withIndex: " + indexMax + "\nMin = " + min +
+                " with index: " + indexMin;
     }
 
     /**

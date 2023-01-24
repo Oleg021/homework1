@@ -5,14 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
-import static org.assertj.core.api.ClassBasedNavigableIterableAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
     public final static double EPS = 1e-9;
@@ -54,27 +47,38 @@ class CalculatorTest {
 
     @Test
     void testFindMaxAndMin() {
-
+        String expected = "Max = 2.7999999999999132\n" +
+                "Min = 0.2";
+        String actual = calculator.findMaxAndMin(calculator.findArgX());
+        assertEquals(expected, actual);
     }
 
     @Test
-    void findSum() {
+    void testFindSum() {
         double expected = 13594.060487738334;
         double actual = calculator.findSum(calculator.findArgY());
         assertEquals(expected, actual);
     }
 
     @Test
-    void findAverage() {
+    void testFindAverage() {
+        String expected = "Average = 10.448931965978735\n" +
+                "Sum = 13594.060487738334";
+        String actual = calculator.findAverage(calculator.findArgY());
+        assertEquals(expected, actual);
     }
 
     @Test
     void findMaxMinWithIndex() {
+        String expected = "Max = 2.7999999999999132 withIndex: 1300\n" +
+                "Min = 0.2 with index: 0";
+        String actual = calculator.findMaxMinWithIndex(calculator.findArgX());
+        assertEquals(expected, actual);
     }
 
     @ParameterizedTest
     @CsvSource({"50, 3.148703935719195", "1050, 13.88999999999998", "1300, -2.453155838393788"})
-    void findElementFromIndex(int index, double expectedElement) {
+    void testFindElementFromIndex(int index, double expectedElement) {
         assertEquals(calculator.findElementFromIndex(index), expectedElement);
     }
 }
